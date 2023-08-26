@@ -15,7 +15,7 @@ Kdcwinner\Securitycode\SecuritycodeServiceProvider::class,
 ## Publish the Assets
 Run the following command to publish config file,
 
-php artisan laravel-pwa:publish
+php artisan securitycode:publish
 Configure Securitycode
 ## License
 The MIT License (MIT). Please see <a href="/shailesh-ladumor/laravel-pwa/blob/master/LICENSE.md">License</a> File for more information
