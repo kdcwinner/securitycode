@@ -1,0 +1,27 @@
+{
+    "name": "kdcwinner/securitycode",
+    "description": "It will generate a code which will be numbers with 6 digits and it will not be palindrome,not contain same digits more than 3 times, not contain sequencial number more than 3.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ketan chavda",
+            "email": "ketanchavdad@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Kdcwinner\\SecurityCode\\":"src/"
+        }
+    },
+      "extra": {
+        "laravel": {
+            "providers": [
+                "Kdcwinner\\Securitycode\\SecuritycodeServiceProvider"
+            ]
+        }
+    }
+
+}
