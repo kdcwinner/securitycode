@@ -14,6 +14,6 @@ class SecuritycodeProvider extends ServiceProvider{
      */
     public function boot()
     {
-          $this->loadViewsFrom(__DIR__.'/../views', 'securitycode');
+          $this->loadViewsFrom(__DIR__.'/../views','Securitycode');
     }
 }

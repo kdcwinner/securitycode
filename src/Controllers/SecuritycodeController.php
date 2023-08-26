@@ -7,12 +7,12 @@ use Kdcwinner\Securitycode\Securitycode;
 class SecuritycodeController
 {
     public function configration(Securitycode $Securitycode) {
-         $Securitycode = $Securitycode->generateSecuritycode();
-        return view('accesscode::configration');
+         $Securitycode = $Securitycode->checkContraints();
+        return view('securitycode::configration',compact('Securitycode'));
     }
 
     public function accessCode(Accesscode $accesscode) {
-      $accesscode = $accesscode->generateAccessCode();
+      $accesscode = $accesscode->generateSecuritycode();
         dd($accesscode);
       return response()->json(array('accesscode'=> $accesscode), 200);
    }
