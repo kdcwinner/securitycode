@@ -6,23 +6,8 @@ use Kdcwinner\Securitycode\Models\Securitycode as SecuritycodeModel;
 
 class Securitycode
 {
-    public function data()
-    {
-        return SecuritycodeModel::getRandomData();
-    }
-    
-    /* code to generate access security code */
-    public function generateSecurityCode(){
-        $code_length = 6;
-        $min_value = 100000;
-        $max_value = '';
-        for ($i=0; $i < $code_length ; $i++) { 
-            $max_value .= '9';
-        }
-        return $generated_code = rand($min_value,$max_value);   
-    }
-
-    public function checkContraints(){
+    /* generateAndCheckContraints function will generate and check all required constrains and return security code */
+    public function generateAndCheckConstraints(){
         $code = -1;
         while (($this->checkPalindrome($code =$this->generateSecurityCode()) == -1)) {
             if($this->checkThreeNumerical($code) == -1){
@@ -32,6 +17,17 @@ class Securitycode
             }
         }
         return $code;
+    }
+
+    /* code to generate access security code */
+    public function generateSecurityCode(){
+        $code_length = 6;
+        $min_value = 100000;
+        $max_value = '';
+        for ($i=0; $i < $code_length ; $i++) { 
+            $max_value .= '9';
+        }
+        return $generated_code = rand($min_value,$max_value);   
     }
 
     /* checkPalindrome function checks given input is Palindrome or not and it return 1 if its palindrom eles -1*/
