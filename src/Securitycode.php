@@ -2,12 +2,14 @@
 
 namespace Kdcwinner\Securitycode;
 
-use Kdcwinner\Securitycode\Models\Securitycode as SecuritycodeModel;
+use Kdcwinner\Securitycode\ConfigrationController;
+
+use Kdcwinner\Securitycode\Models\Configration;
 
 class Securitycode
 {
     /* generateAndCheckContraints function will generate and check all required constrains and return security code */
-    public function generateAndCheckConstraints(){
+    public  function  generateAndCheckConstraints(){
         $code = -1;
         while (($this->checkPalindrome($code =$this->generateSecurityCode()) == -1)) {
             if($this->checkThreeNumerical($code) == -1){
@@ -21,7 +23,9 @@ class Securitycode
 
     /* code to generate access security code */
     public function generateSecurityCode(){
-        $code_length = 6;
+        $configration = Configration::get()->first();
+        $data = json_decode($configration->data);
+        $code_length = $data->code_length;
         $min_value = 100000;
         $max_value = '';
         for ($i=0; $i < $code_length ; $i++) { 

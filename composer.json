@@ -5,23 +5,22 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "ketan chavda",
+            "name": "Ketan Chavda",
             "email": "ketanchavdad@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "require": {},
-    "autoload": {
-        "psr-4": {
-            "Kdcwinner\\SecurityCode\\":"src/"
-        }
-    },
-      "extra": {
+    "extra": {
         "laravel": {
             "providers": [
-                "Kdcwinner\\Securitycode\\SecuritycodeProvider"
+                "Kdcwinner\\Securitycode\\SecuritycodeServiceProvider"
             ]
         }
+    },
+    "autoload": {
+        "psr-4": {
+            "Kdcwinner\\Securitycode\\": "src/"
+        }
     }
-
 }
