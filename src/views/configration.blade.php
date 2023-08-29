@@ -48,7 +48,7 @@
           @csrf  
   <div class="col-auto">
     <label for="code_length" class="visually-hidden">Code Length</label>
-    <input type="text" min="6" max="10" class="form-control" onkeypress="return isNumberKey(event)" required="required" name="code_length" id="code_length" value="{{ $data->code_length }}" placeholder="Please enter length to generate access code" >
+    <input type="text" min="6" max="10" class="form-control" onkeypress="return isNumberKey(event)" required="required" name="code_length" id="code_length" value="{{ $code_length }}" placeholder="Please enter length to generate access code" >
   </div>
   <div class="col-auto">
     <button type="button" id="id_set_access_length" class="btn btn-primary mb-3">Set Access Code Length</button>

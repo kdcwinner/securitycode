@@ -10,8 +10,13 @@ class ConfigrationController extends Controller
 {
     public function index() {
         $configration = Configration::get()->first();
+        $data = '';
+        $code_length = 6;
+        if(!empty($configration)){
         $data = json_decode($configration->data);
-        return view("securitycode::configration",compact('data'));
+        $code_length = $data->code_length;
+        }
+        return view("securitycode::configration",compact('code_length'));
     }
 
     public function saveconfigration(Request $request)

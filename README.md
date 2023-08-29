@@ -8,7 +8,7 @@ Install the package by the following command,
 composer require kdcwinner/securitycode
 
 ## Add Provider
-Add the provider to your config/app.php into provider section if using lower version of laravel,
+Add the provider to your config/app.php into provider section.
 
 Kdcwinner\Securitycode\SecuritycodeServiceProvider::class,
 
